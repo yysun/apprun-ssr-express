@@ -17,4 +17,6 @@ app.use('/', require('./routers/index'));
 app.use('/about', require('./routers/about'));
 app.use('/contact', require('./routers/contact'));
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+const listener = app.listen(process.env.PORT, function () {
+  console.log('Your app is listening on port ' + listener.address().port);
+});
