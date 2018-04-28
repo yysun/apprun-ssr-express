@@ -9,7 +9,7 @@ const update = {
   '/': async (state, e, path) => {
     if (e) {
       e.preventDefault()
-      console.log('push', path, e)
+      // console.log('push', path, e)
       history.pushState({}, path, path);
     }
     const json = await get(path);
@@ -19,7 +19,7 @@ const update = {
 app.start('my-app', null, view, update);
 window.addEventListener('popstate', (e) => {
   const path = document.location.pathname;
-  console.log('pop', path, e)
+  // console.log('pop', path, e)
   app.run('/', null, path);
 });
 
