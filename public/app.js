@@ -7,13 +7,19 @@ const get = async url => new Promise((resolve, reject) => {
 const view = (state) => state;
 const update = {
   '/': async (state, e, path) => {
-    e && e.preventDefault();
-    const json = await get(path || '/');
-    history.pushState(null, null, path);
+    if (e) {
+      e.preventDefault()
+      console.log('push', path, e)
+      history.pushState({}, path, path);
+    }
+    const json = await get(path);
     return json;
   }
 };
 app.start('my-app', null, view, update);
-window.onpopstate = (e) => {
+window.addEventListener('popstate', (e) => {
+  const path = document.location.pathname;
+  console.log('pop', path, e)
+  app.run('/', null, path);
+});
 
-}
