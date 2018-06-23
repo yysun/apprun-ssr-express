@@ -13,7 +13,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', require('./routers/index'));
+app.use('/', require('./routers/home'));
 app.use('/about', require('./routers/about'));
 app.use('/contact', require('./routers/contact'));
 

@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { state: { title: 'Hello AppRun SSR' } });
+  res.render('home', { state: { title: 'Hello AppRun SSR' } });
 });
 
 module.exports = router;
