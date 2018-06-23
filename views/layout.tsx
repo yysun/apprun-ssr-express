@@ -4,7 +4,7 @@ export default (props, children) => global.ssr ? <html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>AppRun</title>
+    <title>AppRun - SSR</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   </head>
@@ -18,14 +18,14 @@ export default (props, children) => global.ssr ? <html>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="#" onclick="app.run('/', event, '/')">Home</a>
+            <li className="nav-item">
+              <a className="nav-link active" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" onclick="app.run('/', event, '/about')">About</a>
+              <a className="nav-link" href="/about">About</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" onclick="app.run('/', event, '/contact')">Contact</a>
+              <a className="nav-link" href="/contact">Contact</a>
             </li>
             <li>
               <a className="nav-link">{new Date().toLocaleTimeString()}</a>
